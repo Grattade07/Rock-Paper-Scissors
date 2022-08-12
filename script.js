@@ -5,3 +5,10 @@ function getComputerChoice() {
 }
 
 getComputerChoice()
+
+function gameRound() {
+    var computerSelection = getComputerChoice();
+    var playerSelection = window.prompt("Rock, Paper or Scissors?");
+}
+
+gameRound()
