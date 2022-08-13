@@ -30,22 +30,11 @@ function playRound(playerSelection, computerSelection) {
     }
 
   }
-   
-  alert(playRound());
 
   function game() {
-    var playerWins = 0;
-    var computerWins = 0;
-
+   
     for (let i = 0; i < 5; i++){
-    playRound();
-    if (playRound().includes("You win")){
-        playerWins++;
-        console.log("You won this round");
-    } else if (playRound().includes("You lose")){
-        computerWins++;
-        console.log("You lost this round");
-    } 
+    alert(playRound());
     }
   }
 
