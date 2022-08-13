@@ -6,6 +6,8 @@ function getComputerChoice() {
 
 var playerSelection = prompt("Rock, Paper or Scissors?").toLowerCase();
 var computerSelection = getComputerChoice().toLowerCase();
+console.log(playerSelection);
+console.log(computerSelection);
 
 function playRound(playerSelection, computerSelection) {
     
@@ -17,5 +19,5 @@ function playRound(playerSelection, computerSelection) {
     }
   }
    
-  var theResult = playRound(playerSelection, computerSelection);
+  var theResult = playRound();
   console.log(theResult);
