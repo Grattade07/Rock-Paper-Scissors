@@ -24,8 +24,7 @@ function playRound(playerSelection, computerSelection) {
         return "You win! Scissors beats Paper";
     } else if (playerSelection === "") {
         return "It appears you didn't put any option in. Please choose an option."
-    }
-     else {
+    }  else {
         return "That is not an option please choose Rock, Paper or Scissors"
     }
 
@@ -33,9 +32,24 @@ function playRound(playerSelection, computerSelection) {
 
   function game() {
    
+    var playerScore = 0;
+    var computerScore = 0;
+    var draws = 0;
+
     for (let i = 0; i < 5; i++){
-    alert(playRound());
+        if (playRound().includes("win")) {
+            ++playerScore;
+            console.log("The score is Player = " + playerScore + "Computer = " + computerScore)
+        } else if (playRound().includes("lose")) {
+            ++computerScore;
+            console.log("The score is Player = " + playerScore + "Computer = " + computerScore)
+        } else if (playRound().includes("draw")) {
+            ++draws;
+            console.log("The score is Player = " + playerScore + "Computer = " + computerScore)
+        }
     }
+
+
   }
 
   game();
