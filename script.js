@@ -4,7 +4,9 @@ function getComputerChoice() {
     return computerChoice;
 }
 
-    
+let playerScore = 0;
+let computerScore = 0;
+
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         return "Tie";
@@ -34,20 +36,20 @@ function playRound(playerSelection, computerSelection) {
 
 }
 
-    let playerSelection = prompt("Rock, Paper or Scissors?").toLowerCase();
-    let computerSelection = getComputerChoice().toLowerCase();
-
-    console.log(playRound(playerSelection, computerSelection));
-
-    let playerScore = 0;
-    let computerScore = 0;
-
     function game() {
         for (i = 0; i < 5; i++) {
             let playerSelection = prompt("Rock, Paper or Scissors?").toLowerCase();
             let computerSelection = getComputerChoice().toLowerCase();
             console.log(playRound(playerSelection, computerSelection));
         }
+
+        if (playerScore > computerScore) {
+            return "You won. Congratulations!"
+        } else if (playerScore < computerScore) {
+            return "You lost. Better luck next time!"
+        } else if (playerScore === computerScore) {
+            return "It's a tie!"
+        }
     }
 
-    game();
+    console.log(game());
