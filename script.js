@@ -31,5 +31,4 @@ function playRound(playerSelection, computerSelection) {
 
   }
    
-  var theResult = playRound();
-  console.log(theResult);
+  alert(playRound());
