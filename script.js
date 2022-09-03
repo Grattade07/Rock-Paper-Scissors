@@ -1,9 +1,11 @@
+const results = document.querySelector("#results");
+
 const rock = document.querySelector("#rock");
 rock.addEventListener("click", () => {
     let computerSelection = getComputerChoice().toLowerCase();
     let playerSelection = "rock"
 
-    console.log(playRound(playerSelection, computerSelection));
+    results.textContent = (playRound(playerSelection, computerSelection));
 });
 
 const paper = document.querySelector("#paper");
@@ -11,7 +13,7 @@ paper.addEventListener("click", () => {
     let computerSelection = getComputerChoice().toLowerCase();
     let playerSelection = "paper"
 
-    console.log(playRound(playerSelection, computerSelection));
+    results.textContent = (playRound(playerSelection, computerSelection));
 });
 
 const scissors = document.querySelector("#scissors");
@@ -19,12 +21,8 @@ scissors.addEventListener("click", () => {
     let computerSelection = getComputerChoice().toLowerCase();
     let playerSelection = "scissors"
 
-    console.log(playRound(playerSelection, computerSelection));
+    results.textContent = (playRound(playerSelection, computerSelection));
 });
-
-const results = document.querySelector("#results");
-
-
 
 function getComputerChoice() {
     const computerOptions = ['Rock', 'Paper', 'Scissors'];
