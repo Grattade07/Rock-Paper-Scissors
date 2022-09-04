@@ -1,11 +1,15 @@
 const results = document.querySelector("#results");
 
+const playerPoints = document.querySelector("#playerScore");
+
 const rock = document.querySelector("#rock");
 rock.addEventListener("click", () => {
     let computerSelection = getComputerChoice().toLowerCase();
     let playerSelection = "rock"
 
     results.textContent = (playRound(playerSelection, computerSelection));
+
+    playerPoints.textContent = playerScoreCount();
 });
 
 const paper = document.querySelector("#paper");
@@ -32,6 +36,14 @@ function getComputerChoice() {
 
 let playerScore = 0;
 let computerScore = 0;
+
+function playerScoreCount(){
+    if (playerScore != 5) {
+    return `Your score is ${playerScore}`;
+    } else if (playerScore === 5) {
+        return `Your score is ${playerScore}. Congratulations, you\'ve won!`
+    }
+}
 
 /* let computerSelection = getComputerChoice();
 let playerSelection = prompt("Rock, Paper or Scissors?").toLowerCase(); */
