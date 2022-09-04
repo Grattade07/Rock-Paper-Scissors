@@ -2,6 +2,8 @@ const results = document.querySelector("#results");
 
 const playerPoints = document.querySelector("#playerScore");
 
+const computerPoints = document.querySelector("#compScore");
+
 const rock = document.querySelector("#rock");
 rock.addEventListener("click", () => {
     let computerSelection = getComputerChoice().toLowerCase();
@@ -10,6 +12,8 @@ rock.addEventListener("click", () => {
     results.textContent = (playRound(playerSelection, computerSelection));
 
     playerPoints.textContent = playerScoreCount();
+
+    computerPoints.textContent = compScoreCount();
 });
 
 const paper = document.querySelector("#paper");
@@ -18,6 +22,10 @@ paper.addEventListener("click", () => {
     let playerSelection = "paper"
 
     results.textContent = (playRound(playerSelection, computerSelection));
+
+    playerPoints.textContent = playerScoreCount();
+
+    computerPoints.textContent = compScoreCount();
 });
 
 const scissors = document.querySelector("#scissors");
@@ -26,6 +34,10 @@ scissors.addEventListener("click", () => {
     let playerSelection = "scissors"
 
     results.textContent = (playRound(playerSelection, computerSelection));
+
+    playerPoints.textContent = playerScoreCount();
+
+    computerPoints.textContent = compScoreCount();
 });
 
 function getComputerChoice() {
@@ -41,10 +53,17 @@ function playerScoreCount(){
     if (playerScore != 5) {
     return `Your score is ${playerScore}`;
     } else if (playerScore === 5) {
-        return `Your score is ${playerScore}. Congratulations, you\'ve won!`
+        return `Your score is ${playerScore}. Congratulations, you\'ve won!`;
     }
 }
 
+function compScoreCount() {
+    if (computerScore != 5) {
+        return `The computer\'s score is ${computerScore}`;
+        } else if (computerScore === 5) {
+            return `The computer\'s score is ${computerScore}. Better luck next time`;
+        }
+}
 /* let computerSelection = getComputerChoice();
 let playerSelection = prompt("Rock, Paper or Scissors?").toLowerCase(); */
 
